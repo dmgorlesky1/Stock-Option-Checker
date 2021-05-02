@@ -17,5 +17,5 @@ Future Work:
 
 -Check for stocks that increase price cap
 
--If possible, I'd like to make some performance fixes, a way to automatically update the input file as new tickers IPOor go over my $120 range, and handle the program quitting before finishing (may just have it somehow rerun without any user interaction until finished)
+-If possible, I'd like to make some performance fixes, a way to automatically update the input file as new tickers IPO, or go over my $120 range. I'd also like for it to handle the program quitting before finishing (may just have it somehow rerun without any user interaction until finished)
 
