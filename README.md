@@ -10,8 +10,12 @@ The yahoo_fin package will occasionally error itself out and quit the program af
 Future Work:
 ------------
 -Check last trading day if the stock had options, if it didn't yesterday but does now, print to a text document the ticker name, and why it was added. 
+    
     --> More information may be appended into the text file, will work on that when I get to it.
+
 -Check if the options went from Monthly to Weekly
+
 -Check for stocks that increase price cap
+
 -If possible, I'd like to make some performance fixes, a way to automatically update the input file as new tickers IPOor go over my $120 range, and handle the program quitting before finishing (may just have it somehow rerun without any user interaction until finished)
 
