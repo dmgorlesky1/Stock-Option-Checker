@@ -2,7 +2,7 @@
 # Date: 04/24/2021
 
 # Stock-Option-Checker
-The purpose of this program is to see what stocks have options currently.
+The purpose of this program is to see what stocks have options currently, and if options were added to a ticker.
 
 # Notes:
 The yahoo_fin package will occasionally error itself out and quit the program after too many attempts to get the a tickers information. This isn't unusual, just a nuiance of the package. You should be able to rerun it again and it will continue where it left off with no problems.
