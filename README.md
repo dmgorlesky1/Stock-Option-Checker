@@ -19,6 +19,13 @@ Future Work:
 
 -If possible, I'd like to make some performance fixes, a way to automatically update the input file as new tickers IPO, or go over my $100 range. I'd also like for it to handle the program quitting before finishing (may just have it somehow rerun without any user interaction until finished)
 
-#Data:
+# Data:
 All of my data for tickers on the NYSE and NASDAQ come from 
 ```https://www.nasdaq.com/market-activity/stocks/screener?exchange=NYSE&render=download```
+
+The NYSEFile.csv holds all the tickers on the NYSE exchange.
+The NASDAQ.csv holds all the tickers on the NASDAQ exchange.
+The finalTickers.csv holds all the filtered tickers 
+The previousLog.csv file will hold the data of each ticker from the last time the program was ran.
+The tempFile.csv will hold the updated values that will then overwrite previousLog (don't want data lost or overwritten as I'm reading)
+The newOptions.txt file holds the tickers that now have options that didn't previously. Data will eventually be appended at the top instead of being overwritten.
