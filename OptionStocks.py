@@ -51,12 +51,12 @@ k = 1
 i = 0
 
 for aline in prevLog:
-     values = aline.split(",")
-     print("Ticker " + str(k) + ": " + values[0]) #This is to print what ticker and # program is on.
-     k = k + 1
-     try:
-         get_calls(values[0])
-         print("After get calls")
+      values = aline.split(",")
+      print("Ticker " + str(k) + ": " + values[0]) #This is to print what ticker and # program is on.
+      k = k + 1
+      try:
+        get_calls(values[0])
+        print("After get calls")
         line = values[0] + ": added options recently.\n"
         if values[1] == "N\n":
             tempOption.write(line)
@@ -67,7 +67,7 @@ for aline in prevLog:
         else:      
             tempFile.write(aline)
             tempFile.flush()
-    except:
+      except:
         print("except")
         tempFile.write(aline)
         tempFile.flush()
@@ -105,7 +105,7 @@ tempFile.close()
 #Moving new list of stocks with options back to previousLog file
 prevLog = open("previousLog.csv", "r+")
 tempFile = open("tempFile.csv", "r+")
-shutil.copyfile("tempFile.csv", "previousLog.csv")
+shutil.copyfile("tempFile.csv", "previousLog.csv") #<------------------
 tempFile.truncate() #Clearing temp file
 
 
@@ -113,4 +113,5 @@ tempFile.truncate() #Clearing temp file
 tempFile.close()
 prevLog.close()
 finalFile.close()
+
 
