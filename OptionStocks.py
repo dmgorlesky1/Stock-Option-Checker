@@ -56,7 +56,7 @@ for aline in prevLog:
       k = k + 1
       try:
         get_calls(values[0])
-        print("After get calls")
+        #print("After get calls") #THIS IS USED WHEN YOU WANT TO MAKE SURE IT ISN'T STUCK
         line = values[0] + ": added options recently.\n"
         if values[1] == "N\n":
             tempOption.write(line)
@@ -68,7 +68,7 @@ for aline in prevLog:
             tempFile.write(aline)
             tempFile.flush()
       except:
-        print("except")
+        #print("except") #THIS IS USED WHEN YOU WANT TO MAKE SURE IT ISN'T STUCK
         tempFile.write(aline)
         tempFile.flush()
         continue
@@ -105,7 +105,7 @@ tempFile.close()
 #Moving new list of stocks with options back to previousLog file
 prevLog = open("previousLog.csv", "r+")
 tempFile = open("tempFile.csv", "r+")
-shutil.copyfile("tempFile.csv", "previousLog.csv") #<------------------
+shutil.copyfile("tempFile.csv", "previousLog.csv") #<--------------------------------------------
 tempFile.truncate() #Clearing temp file
 
 
