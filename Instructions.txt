@@ -5,6 +5,7 @@ SETUP:
 1. Downlaod Thonny, it's a program that allows for you use run Python code, which is what this program is. 
     -It's easier to set it to having a desktop icon. Link: (https://thonny.org/)
 2. Download all the files into a folder on your desktop. (Download as Zip folder, move to desktop, extract all)
+    -Hit the green 'Code' button, then below it it says "Download Zip"
 3. When you open Thonny you'll need to do a few things. For starters, open up the two programs.
     3a. Hit file in the top left corner, hit open, then find the folder you put on your desktop.
         -You'll have to open 2 programs. 1 named OptionsStock.py and another named readFile.py
@@ -13,9 +14,9 @@ SETUP:
             -The readFile.py program is where the finalTickers csv(excel) file comes from. It removes all unwanted tickers
                 so we only get common stocks from both NYSE and NASDAQ.
             -This program only needs to be ran whenever new stock lists are generated from the NYSE and NASDAQ.   
-                *Use this website ```https://www.nasdaq.com/market-activity/stocks/screener?exchange=NYSE&render=download```*
-                -Download the NYSE list and replace the file called NYSEFile.csv 
-                -Download the NASDAQ list and replace the file called NASDAQ.csv
+                * Use this website: ```https://www.nasdaq.com/market-activity/stocks/screener?exchange=NYSE&render=download``` *
+                -Download the NYSE list and replace the file called NYSEFile.csv (Name must match)
+                -Download the NASDAQ list and replace the file called NASDAQ.csv (Name must match)
             
             -The OptionsStock.py is where everything is actually done. The results after running this program will go into the file
                 called newOptions.txt
@@ -27,7 +28,7 @@ SETUP:
             -> yahoo-fin (This allows us to get stock data)
             
 4. Everything should be set up now. In order to run each program, hit the Green Arrow at the top under "View"
-      *** NOTE: If the program gets stuck (isn't printing new tickers), hit the "STOP" button. Make sure the data in prevLogs.csv is okay (not empty).
+      *** NOTE: If the program gets stuck (isn't showing new tickers), hit the "STOP" button. Make sure the data in prevLogs.csv is okay (not empty).
           -> If it's fine, continue. If not, go to the "Recover Data" section below.
           
  *** Note: In order to let users see it's working, I have it printing the tickers number and the tickers as they are happening. This can be viewed on the console at the bottom.
@@ -36,4 +37,43 @@ SETUP:
       
 Data Recovery:
 --------------
+If you're here something must've happened to your data. There are a few areas you'll need to check to make sure it's okay before doing anything else.
+1. Check that both NYSEFile.csv AND NASDAQFile.csv have things in them!
+    ->May need to try redownloading them if something happened
+2. Check finalTickers.csv and that it also isn't empty. (If this happpens, it was caused in the readFile.py program. Try rerunning it after redownloading the 2 csv files above.
+3. Check prevLogs.csv. This is what is changed each time the program is ran.
+    ->If prevLog is empty do these steps:
+        a) Click and drag until a blue background has covered lines 53-75 (see line numbers on the left side of Thonny).
+        b) Hit Ctrl-#
+        c) Go down to line 108 and at the very beginning, hit #. This should cause the entire line to be greyed out. I've added a "<------------" so you can find it.
+        d) Go back up to lines 39-42 and remove the # symbol for each line. NOTE: Careful on line 39, there is an extra space you also have to remove!!!!!!!!!
+        e) Run the program.
+        f) Make sure prevLogs.csv now has the tickers in column A and "N" in column B.
+        g) UNDO ALL CHANGES
+            -> Hit Ctrl-Z (undo button) until lines 53-75 are uncommented. DO NOT HIT AGAIN, IT MAY ALTER THE PROGRAM AND BREAK IT.
+        h) The program should be fine to run again in its entirety.
+        
+        
+FINAL NOTES:
+------------
+IF YOU EVER WANT TO CHANGE WHAT DATA IS BEING FILTERED, EITHER ASK ME OR FOLLOW THESE STEPS
+1. If you want to change the cost of each stock to be more or less than $100, go into readFile, on line 66, change the '100' what desired number
+2. If you wish to undo some filters, this is where it gets complicated.
+    -> If you wish to delete a filter, look above at lines 17-29 and see which one you'd like to remove and it's name (left side of the '=')
+    -> Find that name below and delete the line
+    -> Now, if you try and run the program you get an indentation error. Instead, highlight lines 45-72 and hit tab. This auto indents them correctly.
+    -> Now you can run the program again.
+    
+    
+Information about Files:
+------------------------
+All of my data for tickers on the NYSE and NASDAQ come from https://www.nasdaq.com/market-activity/stocks/screener?exchange=NYSE&render=download
+
+The NYSEFile.csv holds all the tickers on the NYSE exchange. 
+The NASDAQ.csv holds all the tickers on the NASDAQ exchange. 
+The finalTickers.csv holds all the filtered tickers 
+The previousLog.csv file will hold the data of each ticker from the last time the program was ran. 
+The tempFile.csv will hold the updated values that will then overwrite previousLog (don't want data lost or overwritten as I'm reading).
+
+-> The newOptions.txt file holds the tickers that now have options that didn't previously. (THIS IS THE FILE YOU LOOK AT THE SEE THE RESULTS AFTER THE PROGRAM RAN)
             
