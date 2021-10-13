@@ -1,1 +1,39 @@
 This is the instructions on how to set up and properly use this program.
+-----------------------------------------------------------------------------
+SETUP:
+------
+1. Downlaod Thonny, it's a program that allows for you use run Python code, which is what this program is. 
+    -It's easier to set it to having a desktop icon. Link: (https://thonny.org/)
+2. Download all the files into a folder on your desktop. (Download as Zip folder, move to desktop, extract all)
+3. When you open Thonny you'll need to do a few things. For starters, open up the two programs.
+    3a. Hit file in the top left corner, hit open, then find the folder you put on your desktop.
+        -You'll have to open 2 programs. 1 named OptionsStock.py and another named readFile.py
+        
+        *** IMPORTANT ***
+            -The readFile.py program is where the finalTickers csv(excel) file comes from. It removes all unwanted tickers
+                so we only get common stocks from both NYSE and NASDAQ.
+            -This program only needs to be ran whenever new stock lists are generated from the NYSE and NASDAQ.   
+                *Use this website ```https://www.nasdaq.com/market-activity/stocks/screener?exchange=NYSE&render=download```*
+                -Download the NYSE list and replace the file called NYSEFile.csv 
+                -Download the NASDAQ list and replace the file called NASDAQ.csv
+            
+            -The OptionsStock.py is where everything is actually done. The results after running this program will go into the file
+                called newOptions.txt
+                *** DO NOT REPLACE OR TOUCH THE prevLogs.CSV FILE THIS IS WHERE THE TICKER DATA IS KEPT ***
+    
+    3b. Once you have the files open, in the top bar hit "Tools" -> "Manage packages"
+        -Download these packages.
+            -> pandas (not panda, different thing, the 's' is important)
+            -> yahoo-fin (This allows us to get stock data)
+            
+4. Everything should be set up now. In order to run each program, hit the Green Arrow at the top under "View"
+      *** NOTE: If the program gets stuck (isn't printing new tickers), hit the "STOP" button. Make sure the data in prevLogs.csv is okay (not empty).
+          -> If it's fine, continue. If not, go to the "Recover Data" section below.
+          
+ *** Note: In order to let users see it's working, I have it printing the tickers number and the tickers as they are happening. This can be viewed on the console at the bottom.
+      ->If you do not have a window at the bottom of Thonny saying "Shell", simply go to "Run" and click "Run current script" ***
+      
+      
+Data Recovery:
+--------------
+            
